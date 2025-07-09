@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Retro Register</title>
+    <style>
+        body {
+            background: linear-gradient(135deg, #6a0572, #ab83a1);
+            font-family: 'Courier New', monospace;
+            color: #fff;
+            text-align: center;
+            padding-top: 80px;
+        }
+        h2 {
+            font-size: 2.5em;
+            margin-bottom: 30px;
+        }
+        form {
+            background: rgba(0,0,0,0.3);
+            display: inline-block;
+            padding: 30px;
+            border-radius: 12px;
+        }
+        input {
+            width: 250px;
+            padding: 12px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 6px;
+            font-size: 1em;
+        }
+        button {
+            padding: 10px 30px;
+            background: #ffcc00;
+            color: #000;
+            font-weight: bold;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+        a {
+            color: #00ffea;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <h2>✨ Register</h2>
+    <form method="POST">
+        {% csrf_token %}
+        <input type="text" name="username" placeholder="Choose a Username" required><br>
+        <input type="password" name="password" placeholder="Choose a Password" required><br>
+        <button type="submit">Register</button>
+    </form>
+    <p>Already have an account? <a href="{% url 'login' %}">Login here</a></p>
+</body>
+</html>
